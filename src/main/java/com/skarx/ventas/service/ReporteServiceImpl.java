@@ -27,7 +27,8 @@ public class ReporteServiceImpl implements ReporteService {
 
     @Override
     public Reporte stockActual() {
-        long totalStock = productoRepo.sumStock();
+        Long resultado = productoRepo.sumStock();
+        long totalStock = (resultado != null) ? resultado : 0L;
         return new Reporte("Inventario", LocalDate.now(), totalStock);
     }
 }

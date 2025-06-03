@@ -10,5 +10,5 @@ import com.skarx.ventas.model.Entity.Producto;
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
 
     @Query("SELECT SUM(p.stock) FROM Producto p")
-    long sumStock();
+    public abstract Long sumStock();
 }
